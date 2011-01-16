@@ -1,0 +1,15 @@
+<% unless @q.blank? %>
+  <p><a href="/?q=<%=h @q %>.json">JSON</a></p>
+<% end %>
+<% if @foods.empty? %>
+  <p>Here you can find nutritional data for food, as released by the Food Standards Australia and New Zealand government agency.</p>
+  <p>Results are also available in JSON format, to keep robots happy.</p>
+  <p>You may reproduce this data for commercial purposes only by contacting <a href="http://www.foodstandards.gov.au/monitoringandsurveillance/nuttab2006/index.cfm">foodstandards.gov.au</a>.</p>
+  <p>Made by <a href="http://xaviershay.com">Xavier Shay</a>, <a href="mailto:contact@rhnh.net">drop us a line</a> if you like.</p>
+<% else %>
+  <ul>
+  <% @foods.each do |food| %>
+    <li><a href="/foods/<%= food.food_id %>"><%= food.name %></a></li>
+  <% end %>
+  </ul>
+<% end %>

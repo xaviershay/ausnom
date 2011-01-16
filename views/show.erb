@@ -1,0 +1,11 @@
+<h1><%= @food.name %></h1>
+<p><%= @food.description %></p>
+<p><a href="/foods/<%= @food.food_id %>.json">JSON</a></p>
+<table>
+  <% @food.nutrients.all(:order => [:description.asc]).each do |nutrient| %>
+    <tr>
+      <td><%= nutrient.description %></td>
+      <td><%= nutrient.value %> <%= nutrient.scale %></td>
+    </tr>  
+  <% end %>
+</table>  
