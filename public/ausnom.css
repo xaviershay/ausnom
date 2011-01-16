@@ -1,0 +1,26 @@
+body 
+{ 
+  color: black;
+  
+  font: normal 12px helvetica, verdana, arial, sans-serif;
+  line-height: 1.5;
+  padding: 0px;
+  margin: 30px;
+  width: 400px;
+}
+
+a {
+  color: black;
+}
+a:visited {
+  color: grey;
+}
+.important {
+  padding: 5px;
+  font-size: 150%;
+  background: #eee;
+}
+
+acronym {
+  border-bottom: 1px dotted;
+}
