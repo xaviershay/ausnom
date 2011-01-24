@@ -24,3 +24,29 @@ a:visited {
 acronym {
   border-bottom: 1px dotted;
 }
+
+table {
+  border-spacing: 0;
+}
+
+td {
+  padding: 3px 5px;
+}
+
+td:first-child {
+  padding-right: 15px;
+}
+
+tr:nth-child(2n+1) {
+  background-color: #eee;
+}
+
+tr.spacer {
+  background-color: #999;
+}
+
+caption {
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+}

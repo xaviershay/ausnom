@@ -1,11 +1,27 @@
 <h1><%= @food.name %></h1>
 <p><%= @food.description %></p>
-<p><a href="/foods/<%= @food.food_id %>.json">JSON</a></p>
+<p><a href="/foods/<%= @food.food_id %>.json">Download as JSON</a></p>
 <table>
-  <% @food.nutrients.all(:order => [:description.asc]).each do |nutrient| %>
+  <caption>Measurements per 100g</caption>
+  <% @top_nutrients.each do |nutrient| %>
     <tr>
+      <td><%=format_value nutrient.value %><%= nutrient.scale.downcase %></td>
       <td><%= nutrient.description %></td>
-      <td><%= nutrient.value %> <%= nutrient.scale %></td>
+    </tr>  
+    <% if nutrient.scale == 'KJ' %>
+      <tr>
+        <td><%=format_value nutrient.value / 4.184 %>cal</td>
+        <td><%= nutrient.description %></td>
+      </tr>  
+    <% end %>
+  <% end %>
+    <tr class='spacer'>
+      <td colspan='2'></td>
+    </tr>
+  <% @other_nutrients.each do |nutrient| %>
+    <tr>
+      <td><%=format_value nutrient.value %><%= nutrient.scale.downcase %></td>
+      <td><%= nutrient.description %></td>
     </tr>  
   <% end %>
 </table>  
