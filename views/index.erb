@@ -3,6 +3,13 @@
 <% end %>
 <% if @foods.empty? %>
   <p class='important'>Nutritional data of foods, as released by <acronym title="Food Standards Australia and New Zealand government agency">FSANZ</acronym>.</p>
+  <p class='important'>
+    <b>NOTE:</b> This data is currently incomplete! Most nutrients were removed
+    to fit inside Heroku's free database plan (14,000 row cap). It should be
+    easy to migrate to one of the <a href="https://addons.heroku.com/">other
+      free data stores</a> if you are interested.
+  </p>
+
   <p>Results are also available in JSON format, to keep robots happy.</p>
   <p>You may reproduce this data for commercial purposes only by contacting <a href="http://www.foodstandards.gov.au/monitoringandsurveillance/nuttab2006/index.cfm">foodstandards.gov.au</a>.</p>
   <p>Made by <a href="http://xaviershay.com">Xavier Shay</a>, <a href="mailto:contact@rhnh.net">drop us a line</a> if you like. The code is <a href="https://github.com/xaviershay/ausnom">open source</a>.</p>

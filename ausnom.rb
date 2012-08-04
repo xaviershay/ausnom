@@ -3,7 +3,7 @@ require 'json'
 require './models'
 
 LAST_MODIFIED = Time.mktime(2011,1,24).httpdate
-TOP_NUTRIENTS = %w(ENERGY-04DF PROT FE CA FAT)
+TOP_NUTRIENTS = %w(ENERGY-04DF PROT FE FAT)
 
 get '/' do
   last_modified LAST_MODIFIED
