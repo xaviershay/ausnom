@@ -1,4 +1,4 @@
-<% unless @q.blank? %>
+<% unless @q.to_s.length == 0 %>
   <p><a href="/?q=<%=h @q %>.json">Download as JSON</a></p>
 <% end %>
 <% if @foods.empty? %>

@@ -29,7 +29,7 @@ module Searchable
 
     def search(q, opts = {})
       opts[:index] ||= 'search'
-      finder = all(opts.except(:index, :conditions).merge(:conditions => [
+      finder = all(DataMapper::Ext::Hash.except(opts, :index, :conditions).merge(:conditions => [
         "#{opts[:index]}_vector @@ plainto_tsquery('english', ?)", q]))
       finder &= all(opts[:conditions]) if opts[:conditions]
       finder
